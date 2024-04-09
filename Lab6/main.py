@@ -39,7 +39,13 @@ def anomaly(p1: float, p2: float, p3: float, p4: float):
 def read_root():
     return {"Hello": "World"}
 
-
+'''
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
+    '''
+
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    uvicorn.run(app, host=os.environ['HOST'], port=os.environ['PORT'])
